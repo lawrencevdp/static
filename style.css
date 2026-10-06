@@ -1,0 +1,182 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap");
+
+:root {
+  color-scheme: dark;
+  font-family: "Manrope", sans-serif;
+  background: #0b0c12;
+  color: #f4f3f8;
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(102, 91, 212, 0.2), transparent 42%),
+    #0b0c12;
+}
+
+.calculator {
+  width: min(100%, 390px);
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 28px;
+  background: linear-gradient(145deg, rgba(28, 29, 41, 0.98), rgba(18, 19, 27, 0.98));
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.48), inset 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.topbar,
+.brand,
+.status {
+  display: flex;
+  align-items: center;
+}
+
+.topbar {
+  justify-content: space-between;
+  color: #8f90a2;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.brand {
+  gap: 9px;
+}
+
+.brand-mark {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border-radius: 9px;
+  background: #7668ed;
+  color: white;
+  font-size: 20px;
+  letter-spacing: 0;
+}
+
+.status {
+  gap: 7px;
+  font-family: "DM Mono", monospace;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #72dcad;
+  box-shadow: 0 0 10px rgba(114, 220, 173, 0.65);
+}
+
+.display {
+  min-height: 172px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  overflow: hidden;
+  padding: 30px 3px 24px;
+  font-family: "DM Mono", monospace;
+  text-align: right;
+}
+
+.expression {
+  max-width: 100%;
+  overflow: hidden;
+  color: #89899b;
+  font-size: 17px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.result {
+  max-width: 100%;
+  overflow: hidden;
+  margin-top: 9px;
+  font-size: clamp(38px, 12vw, 54px);
+  font-weight: 500;
+  letter-spacing: -0.07em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.key {
+  height: 62px;
+  border: 1px solid rgba(255, 255, 255, 0.035);
+  border-radius: 17px;
+  background: #252631;
+  color: #f1f0f7;
+  cursor: pointer;
+  font: 600 20px "Manrope", sans-serif;
+  transition: transform 100ms ease, background 140ms ease, border-color 140ms ease;
+}
+
+.key:hover {
+  background: #30313e;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.key:active {
+  transform: scale(0.95);
+}
+
+.key:focus-visible {
+  outline: 2px solid #a59aff;
+  outline-offset: 2px;
+}
+
+.key.utility {
+  background: #30303c;
+  color: #b6b4c7;
+  font-size: 16px;
+}
+
+.key.operator {
+  background: rgba(118, 104, 237, 0.13);
+  color: #a99fff;
+  font-size: 24px;
+}
+
+.key.equals {
+  border-color: transparent;
+  background: linear-gradient(145deg, #8b7cff, #6b5ce7);
+  box-shadow: 0 8px 20px rgba(107, 92, 231, 0.22);
+  color: white;
+  font-size: 26px;
+}
+
+footer {
+  padding-top: 20px;
+  color: #626372;
+  font-size: 10px;
+  letter-spacing: 0.03em;
+  text-align: center;
+}
+
+@media (max-width: 420px) {
+  .calculator {
+    padding: 20px;
+    border-radius: 24px;
+  }
+
+  .key {
+    height: 58px;
+    border-radius: 15px;
+  }
+}
